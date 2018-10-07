@@ -1,0 +1,577 @@
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>0293-record-data - </title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <base href="">
+
+        <link rel="stylesheet" href="book.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <link rel="shortcut icon" href="favicon.png">
+
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme -->
+        
+
+        
+
+        <!-- Fetch Clipboard.js from CDN but have a local fallback -->
+        <script src="https://cdn.jsdelivr.net/clipboard.js/1.6.1/clipboard.min.js"></script>
+        <script>
+            if (typeof Clipboard == 'undefined') {
+                document.write(unescape("%3Cscript src='clipboard.min.js'%3E%3C/script%3E"));
+            }
+        </script>
+
+        <!-- Fetch JQuery from CDN but have a local fallback -->
+        <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+        <script>
+            if (typeof jQuery == 'undefined') {
+                document.write(unescape("%3Cscript src='jquery.js'%3E%3C/script%3E"));
+            }
+        </script>
+
+        <!-- Fetch store.js from local - TODO add CDN when 2.x.x is available on cdnjs -->
+        <script src="store.js"></script>
+
+        <!-- Custom JS script -->
+        
+
+    </head>
+    <body class="light">
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme = store.get('mdbook-theme');
+            if (theme === null || theme === undefined) { theme = 'light'; }
+            $('body').removeClass().addClass(theme);
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var sidebar = store.get('mdbook-sidebar');
+            if (sidebar === "hidden") { $("html").addClass("sidebar-hidden") }
+            else if (sidebar === "visible") { $("html").addClass("sidebar-visible") }
+        </script>
+
+        <div id="sidebar" class="sidebar">
+            <ul class="chapter"><li class="affix"><a href="introduction.html">Introduction</a></li><li><a href="0001-transform-attribute-meta-parameter.html"><strong>1.</strong> 0001-transform-attribute-meta-parameter</a></li><li><a href="0003-block-params.html"><strong>2.</strong> 0003-block-params</a></li><li><a href="0010-engines.html"><strong>3.</strong> 0010-engines</a></li><li><a href="0011-improved-cp-syntax.html"><strong>4.</strong> 0011-improved-cp-syntax</a></li><li><a href="0015-the-road-to-ember-2-0.html"><strong>5.</strong> 0015-the-road-to-ember-2-0</a></li><li><a href="0024-bound-attributes.html"><strong>6.</strong> 0024-bound-attributes</a></li><li><a href="0045-internet-explorer.html"><strong>7.</strong> 0045-internet-explorer</a></li><li><a href="0046-registry-reform.html"><strong>8.</strong> 0046-registry-reform</a></li><li><a href="0050-improved-actions.html"><strong>9.</strong> 0050-improved-actions</a></li><li><a href="0053-helpers.html"><strong>10.</strong> 0053-helpers</a></li><li><a href="0056-improved-release-cycle.html"><strong>11.</strong> 0056-improved-release-cycle</a></li><li><a href="0057-ember-data-reference-unification.html"><strong>12.</strong> 0057-ember-data-reference-unification</a></li><li><a href="0058-helper-listing.html"><strong>13.</strong> 0058-helper-listing</a></li><li><a href="0061-ember-data-background-fetch.html"><strong>14.</strong> 0061-ember-data-background-fetch</a></li><li><a href="0064-contextual-component-lookup.html"><strong>15.</strong> 0064-contextual-component-lookup</a></li><li><a href="0065-deprecation-warning-handlers.html"><strong>16.</strong> 0065-deprecation-warning-handlers</a></li><li><a href="0091-weakmap.html"><strong>17.</strong> 0091-weakmap</a></li><li><a href="0095-router-service.html"><strong>18.</strong> 0095-router-service</a></li><li><a href="0101-ember-data-friendly-errors.html"><strong>19.</strong> 0101-ember-data-friendly-errors</a></li><li><a href="0120-route-serializers.html"><strong>20.</strong> 0120-route-serializers</a></li><li><a href="0136-contains-to-includes.html"><strong>21.</strong> 0136-contains-to-includes</a></li><li><a href="0139-isHtmlSafe.html"><strong>22.</strong> 0139-isHtmlSafe</a></li><li><a href="0143-module-unification.html"><strong>23.</strong> 0143-module-unification</a></li><li><a href="0150-factory-for.html"><strong>24.</strong> 0150-factory-for</a></li><li><a href="0176-javascript-module-api.html"><strong>25.</strong> 0176-javascript-module-api</a></li><li><a href="0178-deprecate-ember-k.html"><strong>26.</strong> 0178-deprecate-ember-k</a></li><li><a href="0181-deprecate-ember-data-initializers.html"><strong>27.</strong> 0181-deprecate-ember-data-initializers</a></li><li><a href="0186-track-unique-history-location-state.html"><strong>28.</strong> 0186-track-unique-history-location-state</a></li><li><a href="0191-deprecate-component-lifecycle-hook-args.html"><strong>29.</strong> 0191-deprecate-component-lifecycle-hook-args</a></li><li><a href="0194-deprecate-custom-event-manager.html"><strong>30.</strong> 0194-deprecate-custom-event-manager</a></li><li><a href="0213-custom-components.html"><strong>31.</strong> 0213-custom-components</a></li><li><a href="0225-ember-engines-mount-params.html"><strong>32.</strong> 0225-ember-engines-mount-params</a></li><li><a href="0226-named-blocks.html"><strong>33.</strong> 0226-named-blocks</a></li><li><a href="0229-deprecate-testing-restricted-resolver.html"><strong>34.</strong> 0229-deprecate-testing-restricted-resolver</a></li><li><a href="0232-simplify-qunit-testing-api.html"><strong>35.</strong> 0232-simplify-qunit-testing-api</a></li><li><a href="0236-deprecation-ember-string.html"><strong>36.</strong> 0236-deprecation-ember-string</a></li><li><a href="0237-deprecation-ember-map.html"><strong>37.</strong> 0237-deprecation-ember-map</a></li><li><a href="0240-es-classes.html"><strong>38.</strong> 0240-es-classes</a></li><li><a href="0252-browser-support-changes.html"><strong>39.</strong> 0252-browser-support-changes</a></li><li><a href="0268-acceptance-testing-refactor.html"><strong>40.</strong> 0268-acceptance-testing-refactor</a></li><li><a href="0276-named-args.html"><strong>41.</strong> 0276-named-args</a></li><li><a href="0278-template-only-components.html"><strong>42.</strong> 0278-template-only-components</a></li><li><a href="0280-remove-application-wrapper.html"><strong>43.</strong> 0280-remove-application-wrapper</a></li><li><a href="0281-es5-getters.html"><strong>44.</strong> 0281-es5-getters</a></li><li><a href="0286-block-let-template-helper.html"><strong>45.</strong> 0286-block-let-template-helper</a></li><li><a href="0287-promote-in-element-to-public-api.html"><strong>46.</strong> 0287-promote-in-element-to-public-api</a></li><li><a href="0293-record-data.html" class="active"><strong>47.</strong> 0293-record-data</a></li><li><a href="0294-optional-jquery.html"><strong>48.</strong> 0294-optional-jquery</a></li><li><a href="0297-deprecate-ember-logger.html"><strong>49.</strong> 0297-deprecate-ember-logger</a></li><li><a href="0308-deprecate-property-lookup-fallback.html"><strong>50.</strong> 0308-deprecate-property-lookup-fallback</a></li><li><a href="0311-angle-bracket-invocation.html"><strong>51.</strong> 0311-angle-bracket-invocation</a></li><li><a href="0318-array-helper.html"><strong>52.</strong> 0318-array-helper</a></li><li><a href="0322-deprecate-copy-copyable.html"><strong>53.</strong> 0322-deprecate-copy-copyable</a></li><li><a href="0324-deprecate-component-isvisible.html"><strong>54.</strong> 0324-deprecate-component-isvisible</a></li><li><a href="0326-ember-data-filter-deprecation.html"><strong>55.</strong> 0326-ember-data-filter-deprecation</a></li><li><a href="0329-deprecated-ember-evented-in-ember-data.html"><strong>56.</strong> 0329-deprecated-ember-evented-in-ember-data</a></li><li><a href="0331-deprecate-globals-resolver.html"><strong>57.</strong> 0331-deprecate-globals-resolver</a></li><li><a href="0335-deprecate-send-action.html"><strong>58.</strong> 0335-deprecate-send-action</a></li><li><a href="0337-native-class-constructor-update.html"><strong>59.</strong> 0337-native-class-constructor-update</a></li><li><a href="0340-deprecate-ember-merge.html"><strong>60.</strong> 0340-deprecate-ember-merge</a></li><li><a href="0345-discord.html"><strong>61.</strong> 0345-discord</a></li><li><a href="0370-deprecate-computed-volatile.html"><strong>62.</strong> 0370-deprecate-computed-volatile</a></li></ul>
+        </div>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page" tabindex="-1">
+                <div id="menu-bar" class="menu-bar">
+                    <div class="left-buttons">
+                        <i id="sidebar-toggle" class="fa fa-bars"></i>
+                        <i id="theme-toggle" class="fa fa-paint-brush"></i>
+                    </div>
+
+                    <h1 class="menu-title"></h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html">
+                            <i id="print-button" class="fa fa-print" title="Print this book"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="content" class="content">
+                    <ul>
+<li>Start Date: 2018-01-10</li>
+<li>RFC PR: (leave this empty)</li>
+<li>Ember Issue: (leave this empty)</li>
+</ul>
+<a class="header" href="0293-record-data.html#summary" id="summary"><h3>Summary</h3></a>
+<p>Currently, incrementally experimenting with Ember Data internals is hard both for addon authors
+and Ember Data contributors. This RFC rationalizes the internals and establishes clear boundaries
+for record data storage and manipulation allowing us to expose a public api for addon authors to experiment with.</p>
+<a class="header" href="0293-record-data.html#motivation" id="motivation"><h3>Motivation</h3></a>
+<p>Externally, addons can customize how apps communicate with the server by implementing the Adapter/Serializer APIs but changing how ED deals with relationships, attribute buckets, rollbacks, dirtyness
+and similar issues is extremely challenging and impossible without extremely internal hacks. One can look at popular addons like EmberDataModelFragments
+and see how many private APIs they had to override and hack to implement their funcionality.</p>
+<p>Internally, while ED is reasonably well factored between data coming into the system through
+Adapter/Serializers/IdentityMap/Store and data going out through DS.Model/Snapshots/Adapters/Serializers
+, internal handling of the data including relationships and attributes has extremely fuzzy and unclear boundaries.</p>
+<p>Data currently lives in internalModels, relationship state objects, computed property caches, relationship
+payload caches, etc.</p>
+<a class="header" href="0293-record-data.html#before" id="before"><h4>before</h4></a>
+<p><img src="https://user-images.githubusercontent.com/715175/33340994-6380c66a-d432-11e7-9f00-ed905e78915a.png" alt="image" /></p>
+<p>This RFC proposes rationalizing and extracting ED's core record data handling layer into a RecordData class.</p>
+<a class="header" href="0293-record-data.html#after" id="after"><h4>after</h4></a>
+<p><img src="https://user-images.githubusercontent.com/715175/33341155-e5f170c2-d432-11e7-9c50-4a3e977331fe.png" alt="image" /></p>
+<p>This will allow us to rationalize internal ED APIs, establish clearer internal boundaries,
+allow experimentation by addon authors, and create a path for internal ED experimentation.</p>
+<p>You can think of Record Data as a layer that can receive JSON api payloads for a record,
+apply local changes to it, and can be queried for the current state of the data.</p>
+<p>Examples of things this would enable:</p>
+<ol>
+<li>
+<p>By shipping a custom RecordData, EmberDataModelFragments can implement a large part of their
+funcionality without relying on private apis. Spike at <a href="https://github.com/igorT/ember-data.model-fragments/tree/igor/model-data">model fragments</a></p>
+</li>
+<li>
+<p>A spike of Ember Data backed by Orbit, can be implemented as an addon, where most of the work
+is in implementing a Record Data backed by Orbit. Spike at <a href="https://github.com/igorT/data-orbit/tree/orbit-model-data">data-orbit</a></p>
+</li>
+<li>
+<p>By using an ES6 class for Record Data implementation, this brings us closer to an Emberless
+Ember Data running.</p>
+</li>
+<li>
+<p>If you needed to implement a GraphQL like projection API, Adapters and Serializers would be enough
+for the loading data, but currently there is no good place to handle client side data interactions.
+RecordData would make it much easier to have a GraphQL ED addon</p>
+</li>
+<li>
+<p>Certain apps and models have a large amount of read only data, which is currently very performance heavy
+to implement in ED. They could use a read only fast record data addon, which would enable a large perf win.</p>
+</li>
+<li>
+<p>Experimenting with schemaless approaches is currently very hard in ED, because internal
+models encode assumptions of how attributes and relationships work. Having a swappable RecordData would
+make it easier for us to implement schemaless approaches in addons.</p>
+</li>
+<li>
+<p>By having Record Data fully expressed in JSON API apis, the current state of the store becomes serializable.</p>
+</li>
+</ol>
+<p>By designing a public interface for RecordData that dosen't rely on any other part of EDs current system,
+we can use RecordData as the main building block around which we can refactor the rest of ED.</p>
+<a class="header" href="0293-record-data.html#detailed-design" id="detailed-design"><h3>Detailed design</h3></a>
+<a class="header" href="0293-record-data.html#high-level-design" id="high-level-design"><h4>High level design</h4></a>
+<p>Ember Data would define a RecordData interface, and ship a default implementation. Addons would
+be able to swap their own implementation of the RecordData interface.</p>
+<p>RecordData is an interface defining the api for how the store and DS.Models
+store and apply changes to data. RecordDatas hold
+the backing data for each record, and act as a bridge between the Store, DS.Model, and Snapshots.
+It is per record, and defines apis that respond to
+store api calls like <code>pushData</code>, <code>adapterDidCommit</code> and DS.Model updates like <code>setAttribute</code>.
+RecordData represents the bucket of state that is backing a particular DS.Model.</p>
+<p>The store instantiates the RecordData, feeds it JSON API data coming from the server and
+tells it about state changes. DS.Model queries the RecordData for the attribute
+and relationship values and sends back the updates the user has made.</p>
+<p>Other than the <code>storeApisWrapper</code> passed to it, RecordData does not assume existence of
+any other Ember or Ember Data object. It is a fully self contained system, that might serve
+as a basic building block of non Ember/ED data libraries and could be extracted into a separate
+library.</p>
+<a class="header" href="0293-record-data.html#interface" id="interface"><h4>Interface</h4></a>
+<p>The interface for RecordData is:</p>
+<pre><code class="language-js">export default class RecordData {
+  constructor(modelName: string, clientId?: string, id?: string, storeApisWrapper: StoreApisWrapper) {
+    /*
+      Exposing the entire store api to the RecordData seems very risky and would 
+      limit the kind of refactors we can do in the future. We would provide a wrapper
+      to the RecordData that would enable funcionality MD absolutely needs 
+    */
+  }
+
+
+  /*
+    Hooks through which the store tells the Record Data about the data
+    changes. They all take JSON API and return a list of keys that the 
+    record will need to update
+  */
+
+  pushData(data: JsonApi, shouldCalculateChanges: boolean/* if false, don't need to return changed keys*/) {
+  }
+
+  adapterDidCommit(data: JsonApi) {
+  }
+
+  didCreateLocally(properties) {
+  }
+
+  /*
+    Hooks through which the store tells RecordData about the lifecycle of the data,
+    allowing it to keep track of dirtyness
+  */
+
+  adapterWillCommit(modelName: string, id?: string, clientId?: string) {
+  }
+
+  saveWasRejected(modelName: string, id?: string, clientId?: string) {
+  }
+
+  adapterDidDelete(modelName: string, id?: string, clientId?: string) {
+  }
+
+  recordUnloaded(modelName: string, id?: string, clientId?: string) {
+  }
+
+
+  /*
+   Rollback handling
+  */
+
+  rollbackAttributes(modelName: string, id?: string, clientId?: string) {
+  }
+
+  rollbackAttribute(modelName: string, id?: string, clientId?: string, attribute: string) {
+  }
+
+  changedAttributes(modelName: string, id?: string, clientId?: string) {
+  }
+
+  hasChangedAttributes(modelName: string, id?: string, clientId?: string) {
+  }
+
+
+  /*
+    Methods through which DS.Model interacts with RecordData, by setting and getting local state
+  */
+
+  setAttr(modelName: string, id?: string, clientId?: string, key: string, value: string) {
+  }
+
+  getAttr(modelName: string, id?: string, clientId?: string, key: string) {
+  }
+
+  hasAttr(modelName: string, id?: string, clientId?: string, key: string) {
+  }
+
+  /*
+    Relationships take and return json api resource objects
+    The store takes those references and decides whether it needs to load them, or
+    it can serve them from the cache
+  */
+
+  getHasMany(modelName: string, id?: string, clientId?: string, key: string) {
+  }
+  
+  addToHasMany(modelName: string, id?: string, clientId?: string, key: string, jsonApiResources, idx: number) {
+  }
+
+  removeFromHasMany(modelName: string, id?: string, clientId?: string, key: string, jsonApiResources) {
+  }
+
+  setHasMany(modelName: string, id?: string, clientId?: string, key: string, jsonApiResources) {
+  }
+
+  getBelongsTo(modelName: string, id?: string, clientId?: string, key: string) {
+  }
+
+  setBelongsTo(modelName: string, id?: string, clientId?: string, key: string, jsonApiResource) {
+  }
+
+</code></pre>
+<pre><code class="language-js">
+export default class StoreApiWrapper {
+  /* clientId is used as a fallback in the case of client side creation */
+  createRecordDataFor(modelName, id, clientId)
+  notifyPropertyChanges(modelName, id, clientId, keys)
+  /* 
+  in order to not expose ModelClasses to RecordData, we need to supply it with
+  model schema information. Because a schema design is out of scope for this RFC,
+  for now we expose these two methods we intend to deprecate once we have a schema
+  interpretation
+   */
+  attributesDefinitionFor(modelName, id)
+  relationshipsDefinitionFor(modelName, id)
+
+}
+</code></pre>
+<a class="header" href="0293-record-data.html#eds-usage-of-recorddata" id="eds-usage-of-recorddata"><h4>ED's usage of RecordData</h4></a>
+<p>We would refactor internal models, DS.Models and Snapshots to use RecordData's apis.</p>
+<p>Reimplementation of ED current internals on top of RecordData apis would consist of the store
+pushing the json api payload to the backing record data and the record data setting up internal
+data tracking, as well as storing relationship data on any additional needed recordDatas.</p>
+<pre><code class="language-js">let data = {
+  data: {
+    id:1,
+    type: 'user',
+    attributes: { name: 'Clemens' },
+    relationships: { houses: { data: [{ id: 5, type: 'house' }], links: { related: '/houses' } } }
+  }
+};
+
+store.push(data);
+
+// internal store method
+_internalMethod() {
+  let recordData = store.recordDataFor('user', 1, this._storeWrapperApi)
+  recordData.pushData(data, false)
+}
+
+-&gt;
+
+// model-data.js
+pushData(data, shouldCalculateChanges) {
+  this._data = this.data.attributes;
+  this._setupRelationships(data);
+}
+-&gt;
+// model-data.js
+_setupRelationships(data) {
+  this.storeWrapperApi.recordDataFor('house', 1);
+  ....
+}
+</code></pre>
+<p>The DS.Model interactions would look like:</p>
+<pre><code class="language-js">let user = store.peekRecord('user', 1);
+user.get('name');
+-&gt;
+// DS.Model
+get(key) {
+  let recordData = _internalMethodForGettingTheCorrespondingRecordData(this);
+  return recordData.getAttr('name');
+}
+</code></pre>
+<a class="header" href="0293-record-data.html#relationships" id="relationships"><h4>Relationships</h4></a>
+<a class="header" href="0293-record-data.html#basic-loading-of-relationships" id="basic-loading-of-relationships"><h5>Basic loading of relationships</h5></a>
+<p>RecordData's relationship hooks would receive and return json api relationship objects with
+additional metadata meaningful to Ember Data.</p>
+<p>Lets say that we started off with the same user data as above</p>
+<pre><code class="language-js">let data = {
+  data: {
+    id:1,
+    type: 'user',
+    attributes: { name: 'Clemens' },
+    relationships: { houses: { data: [{ id: 5, type: 'house' }], links: { related: '/houses' } } }
+  }
+};
+let clemens = store.push(data);
+</code></pre>
+<p>Getting a relationships from Clemens would trace a path from the DS.Model to backing record data,
+which would then give the store a json api object, and the store would instantiate a ManyArray
+with the records</p>
+<pre><code class="language-js">clemens.get('houses');
+// DS.Model
+get() {
+  let clemensRecordData = _internalApiGetsUsTheRecordDataFromIDMMAP();
+  return clemens.getHasMany('houses');
+}
+-&gt;
+// Record Data returns
+{[ 
+  data: { id: 5, type: 'house'},
+  links: { related: '/houses' },
+  meta: { realMetaFromServer: 'hi', _ED: { hasAllIds: true, needToLoadLink: false } }
+}
+-&gt; //store takes the above, figures out that it needs to fetch house with id 5
+  // and returns a promise which resolves into a ManyArray
+
+</code></pre>
+<p>ED extends the relationship payload with a custom meta, which gives the store information
+about whether we have information about the entire relationship (we couldn't be sure we
+have all the ids if we loaded from the belongsTo side) and whether the link should be refetched
+(we might need to refetch the link in the case it potentially changed)</p>
+<a class="header" href="0293-record-data.html#setting-relationship-data-locally" id="setting-relationship-data-locally"><h5>Setting relationship data locally</h5></a>
+<p>Similarly to the attributes, changing relationships locally tells record data to update
+the backing data store</p>
+<pre><code class="language-js">let anotherHouse = store.push({data: { type: 'house', id: '5' }});
+clemens.get('houses').then((houses) =&gt; {
+  houses.pushObject(anotherHouse);
+  -&gt; 
+  // internally
+  clemensRecordData.addToHasMany('houses', { data: { type: 'house', id: '5' } })
+});
+</code></pre>
+<a class="header" href="0293-record-data.html#dealing-with-newly-created-records-in-relationships" id="dealing-with-newly-created-records-in-relationships"><h5>Dealing with newly created records in relationships</h5></a>
+<p>Unfortunately, because ED does not have first class clientId support, we need a special case
+for handling locally created records, and pushing them to relationships.</p>
+<p>We extend JSON API resource object with a <code>clientId</code> meta field.
+A locally created record, will also have a ED specific internal client id, which will take preference;</p>
+<pre><code class="language-js">let newHouse = store.createRecord('house');
+clemens.get('houses').then((houses) =&gt; {
+  houses.pushObject(newHouse);
+  -&gt;
+  // internally
+  clemensRecordData.addToHasMany('houses', { data: { type: 'house', id: null, { meta: _ED: { clientId: 1}} } })
+});
+clemens.get('houses') -&gt;
+{ data: 
+  [ { id: 5, type: 'house'}, 
+    { id: null, type: 'house', meta: { _ED: { clientId: 1 } } }],
+  links: { related: '/hi' },
+  meta: { realMetaFromServer: 'hi', _ED: { loaded: true, needToLoadLink: false } }
+}
+</code></pre>
+<p>ED internals would keep a separate cache of client ID and resolve the correct record</p>
+<a class="header" href="0293-record-data.html#addon-usage" id="addon-usage"><h4>Addon usage</h4></a>
+<p>The Store provides a public api for looking up a recordData which the store has not seen before.</p>
+<pre><code>recordDataFor(modelName, id, options) {
+
+}
+</code></pre>
+<p>If an Addon wanted to implement custom data handling functionality, it would subclass the store
+and implement their own RecordData handler.</p>
+<p>There are three main reasons to do this.</p>
+<ol>
+<li>Full replacement of Ember Data's data handling mechanisms</li>
+</ol>
+<p>Best example would be the Ember Data backed by Orbit.js experiment. EmberDataOrbit Addon replaces
+Ember Data's backing data implementation with Orbit.js. Most of this work can be done by EmberDataOrbit
+replacing ED's Record Data implementation</p>
+<pre><code>recordDataFor(modelName, id, options, storeWrapper) {
+  return new OrbitRecordData(modelName, id, storeApisWrapper) 
+}
+</code></pre>
+<ol start="2">
+<li>Per Model replacement of Ember Data's data handling</li>
+</ol>
+<p>If a large app was loading thousands of instances of a particular record type, which was read-only,
+it could use a read only ED addon, which implemented a simplified RecordData without any change tracking.</p>
+<p>The addon would implement a <code>recordDataFor</code> on the store as</p>
+<pre><code>recordDataFor(modelName, id, options, storeWrapper) {
+  if (addonDecidesIfReadOnly(modelName))  {
+    return new ReadOnlyRecordData(modelName, id, storeApisWrapper) 
+  }
+  return this._super(modelName, id, options, storeWrapper);
+}
+</code></pre>
+<ol start="3">
+<li>Adding common funcionality to all ED models</li>
+</ol>
+<p>Ember Data Model Fragments Addon adds support for handling of embedded data fragments.
+In order to manage the handling of fragments, Model Fragments would compose ED's default
+RecordData with it's own for handling fragments.</p>
+<pre><code class="language-js">recordDataFor(modelName, id, options, storeWrapper) {
+  let EDRecordData = this._super(modelName, id, options, storeWrapper);
+  return new ModelFragmentsRecordData(modelName, id, options, storeWrapper, EDRecordData);
+}
+</code></pre>
+<p>When receiving a payload, ModelFragments would handle the fragment part and delegate the rest
+to ED's implementation</p>
+<pre><code class="language-js">pushData(data, shouldCalculateChanges) {
+  let keysThatChanged = this.extractAndHandleFragments(data);
+  return keysThatChanged.concat(this.EDRecordData.pushData(data, shouldCalculateChanges))
+}
+</code></pre>
+<a class="header" href="0293-record-data.html#how-we-teach-this" id="how-we-teach-this"><h3>How we teach this</h3></a>
+<p>These APIs are not meant to be used by most users, or app level code, and should be hidden away and
+described in an api/guides section meant for ED addon authors. Currently there are a few widely used
+addons which would greatly benefit from this, so we can also reach out in person. I have already implemented
+a spike of ModelFragments using RecordData. Having couple addons implement different RecordDatas would be
+a great way to teach new addon authors about the purpose and implementation of the API.</p>
+<a class="header" href="0293-record-data.html#drawbacks" id="drawbacks"><h3>Drawbacks</h3></a>
+<a class="header" href="0293-record-data.html#defines-a-bigger-api-surface-area" id="defines-a-bigger-api-surface-area"><h4>Defines a bigger API surface area</h4></a>
+<p>This change would increase the public API surface area, in a codebase that is already pretty complex.
+However, this would codify and simplifyA APIs addon authors have already had to interact with, while
+creating a path for future simplification of the codebase.</p>
+<a class="header" href="0293-record-data.html#it-allows-people-to-do-very-non-standard-changes-that-will-complexify-their-app-needlessly" id="it-allows-people-to-do-very-non-standard-changes-that-will-complexify-their-app-needlessly"><h4>It allows people to do very non-standard changes that will complexify their app needlessly</h4></a>
+<p>The main mitigation, is only giving RecordData access to a small amount of knowledge of the external world,
+and keeping most APIs pull only thus discouraging trying to do innapropriate work in the RecordData layer</p>
+<a class="header" href="0293-record-data.html#the-new-json-api-interaction-might-preclude-performance-improvements-or-reduce-current-performance" id="the-new-json-api-interaction-might-preclude-performance-improvements-or-reduce-current-performance"><h4>The new JSON api interaction might preclude performance improvements, or reduce current performance</h4></a>
+<a class="header" href="0293-record-data.html#alternatives" id="alternatives"><h3>Alternatives</h3></a>
+<a class="header" href="0293-record-data.html#we-could-do-this-work-as-an-internal-refactor-and-not-expose-it-to-public" id="we-could-do-this-work-as-an-internal-refactor-and-not-expose-it-to-public"><h4>We could do this work as an internal refactor, and not expose it to public.</h4></a>
+<p>I believe that this approach is valid as an internal architecture, so would like to do it even if
+we did not expose any of it to addons/apps.</p>
+<a class="header" href="0293-record-data.html#make-recorddatas-looked-up-from-the-resolver" id="make-recorddatas-looked-up-from-the-resolver"><h4>Make RecordData's looked up from the resolver</h4></a>
+<p>Currently RecordData is a dumb ES6 class and does not live in the Ember resolver system, for performance
+and simplicity reasons. We could alternatively look it up from the resolver, allowing people
+to mock it and inject into it easier.</p>
+<a class="header" href="0293-record-data.html#dont-expect-a-per-record-record-data" id="dont-expect-a-per-record-record-data"><h4>Don't expect a per record Record Data</h4></a>
+<p>Currently, the MD layer semantics mimics current ED's data storage, where data is stored per record in
+internalModels. You could alternatively do this using an app wide cache, like Orbit.js does, or
+using any number of other approaches. This approach while valid, would be harder to implement and
+it's apis would not map as well to ED behavior.</p>
+<a class="header" href="0293-record-data.html#open-questions" id="open-questions"><h3>Open Questions</h3></a>
+<a class="header" href="0293-record-data.html#versioning-and-stability" id="versioning-and-stability"><h4>Versioning and stability</h4></a>
+<p>Our current implementation of <code>internalModel</code> is deeply monkeypatched by at least few addons. I think
+we have to consider it as an semi-intimate api, even though it literally has <code>internal</code> in the name(I've been told adding couple undescores to the name would have helped).
+Because the number of addons monkeypatching it is limited, we can manually migrate them onto the new
+apis. However this requires us to make the new apis public from the get go, and doesn't allow for a long period of api evolution.</p>
+<p>The following options are available, none of them great:</p>
+<ol>
+<li>
+<p>Feature flag RecordData work. The scope of this refactor is large enough, that doing a full feature
+flagging would be an enourmous burden to bear, and I would advise against it. We can proxy some basic
+things, to allow for simpler changes and as a way of warning/deprecating</p>
+</li>
+<li>
+<p>Move from the internals to public RecordData in a single release cycle, and hope public apis we created
+make sense, and will not be performance issues in the future. I am reasonably confident having implemented
+several addons using RecordData that the basic design works, but things can always come up.</p>
+</li>
+<li>
+<p>Move from private internals to private RecordData, and then feature flag the public apis over couple
+versions. In this case the addons monkeypatching the internals, would monkeypatch the new nicer apis
+for a while, and then easily switch to the public api. This feel a bit like SemVer cheating.</p>
+</li>
+</ol>
+<a class="header" href="0293-record-data.html#clientid-passing-to-store-api-methods" id="clientid-passing-to-store-api-methods"><h4>ClientID passing to store api methods</h4></a>
+<p>We use <code>recordDataFor(modelName, id, clientId)</code> as the api to look up recordDatas. Passing an often
+null clientId seems annoying. Orbit.js uses an identity object instead, and if we did the api would look like <code>recordDataFor(identityObject)</code>, where <code>identityObject</code> would look like <code>{ type, id, meta: { _ED: { clientId }}}</code>. This seem a bit more correct, but doesn't look like any existing ED api, and could create
+a lot of allocations.</p>
+<a class="header" href="0293-record-data.html#recorddatas-might-need-to-do-some-global-setupcommunication-how-does-that-work" id="recorddatas-might-need-to-do-some-global-setupcommunication-how-does-that-work"><h4>RecordDatas might need to do some global setup/communication, how does that work?</h4></a>
+<p>Normally you would do this in an initializer, but becasue MDs aren't resolved, the only way would be
+to do it in RecordDataFor or by using a singleton import. Some ceremony being required to using RecordData
+isn't super bad, because it will discourage app authors from customizing it for trivial/innapropriate
+things.</p>
+<a class="header" href="0293-record-data.html#what-do-we-do-with-the-record-state-management" id="what-do-we-do-with-the-record-state-management"><h4>What do we do with the record state management?</h4></a>
+<p>Currently RecordData has no interaction with the state machine. I think we should punt on this
+for now.</p>
+<a class="header" href="0293-record-data.html#-meta--_ed--props-here----alternatives" id="-meta--_ed--props-here----alternatives"><h4>{ meta: { _ED: { props here } } } alternatives?</h4></a>
+<p>We could put the ED internal data outside of meta, and keep meta only for actual meta that comes from
+the server.</p>
+<a class="header" href="0293-record-data.html#naming-of-everything" id="naming-of-everything"><h4>Naming of everything</h4></a>
+<p>Please help with better names for things if you have ideas</p>
+<a class="header" href="0293-record-data.html#snapshot-interface" id="snapshot-interface"><h4>Snapshot interface</h4></a>
+<p>How does a Snapshot ask Record Data for it's attributes</p>
+<a class="header" href="0293-record-data.html#real-life-perf-impact" id="real-life-perf-impact"><h4>Real life perf impact</h4></a>
+<p>Need benchmarks</p>
+
+                </div>
+
+                <!-- Mobile navigation buttons -->
+                
+                    <a rel="prev" href="0287-promote-in-element-to-public-api.html" class="mobile-nav-chapters previous">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="0294-optional-jquery.html" class="mobile-nav-chapters next">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+
+            </div>
+
+            
+                <a href="0287-promote-in-element-to-public-api.html" class="nav-chapters previous" title="You can navigate through the chapters using the arrow keys">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+            
+
+            
+                <a href="0294-optional-jquery.html" class="nav-chapters next" title="You can navigate through the chapters using the arrow keys">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            
+
+        </div>
+
+
+        <!-- Local fallback for Font Awesome -->
+        <script>
+            if ($(".fa").css("font-family") !== "FontAwesome") {
+                $('<link rel="stylesheet" type="text/css" href="_FontAwesome/css/font-awesome.css">').prependTo('head');
+            }
+        </script>
+
+        <!-- Livereload script (if served using the cli tool) -->
+        
+
+        
+
+        
+
+        
+
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+    </body>
+</html>

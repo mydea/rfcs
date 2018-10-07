@@ -1,0 +1,259 @@
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>0308-deprecate-property-lookup-fallback - </title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <base href="">
+
+        <link rel="stylesheet" href="book.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <link rel="shortcut icon" href="favicon.png">
+
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme -->
+        
+
+        
+
+        <!-- Fetch Clipboard.js from CDN but have a local fallback -->
+        <script src="https://cdn.jsdelivr.net/clipboard.js/1.6.1/clipboard.min.js"></script>
+        <script>
+            if (typeof Clipboard == 'undefined') {
+                document.write(unescape("%3Cscript src='clipboard.min.js'%3E%3C/script%3E"));
+            }
+        </script>
+
+        <!-- Fetch JQuery from CDN but have a local fallback -->
+        <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+        <script>
+            if (typeof jQuery == 'undefined') {
+                document.write(unescape("%3Cscript src='jquery.js'%3E%3C/script%3E"));
+            }
+        </script>
+
+        <!-- Fetch store.js from local - TODO add CDN when 2.x.x is available on cdnjs -->
+        <script src="store.js"></script>
+
+        <!-- Custom JS script -->
+        
+
+    </head>
+    <body class="light">
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme = store.get('mdbook-theme');
+            if (theme === null || theme === undefined) { theme = 'light'; }
+            $('body').removeClass().addClass(theme);
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var sidebar = store.get('mdbook-sidebar');
+            if (sidebar === "hidden") { $("html").addClass("sidebar-hidden") }
+            else if (sidebar === "visible") { $("html").addClass("sidebar-visible") }
+        </script>
+
+        <div id="sidebar" class="sidebar">
+            <ul class="chapter"><li class="affix"><a href="introduction.html">Introduction</a></li><li><a href="0001-transform-attribute-meta-parameter.html"><strong>1.</strong> 0001-transform-attribute-meta-parameter</a></li><li><a href="0003-block-params.html"><strong>2.</strong> 0003-block-params</a></li><li><a href="0010-engines.html"><strong>3.</strong> 0010-engines</a></li><li><a href="0011-improved-cp-syntax.html"><strong>4.</strong> 0011-improved-cp-syntax</a></li><li><a href="0015-the-road-to-ember-2-0.html"><strong>5.</strong> 0015-the-road-to-ember-2-0</a></li><li><a href="0024-bound-attributes.html"><strong>6.</strong> 0024-bound-attributes</a></li><li><a href="0045-internet-explorer.html"><strong>7.</strong> 0045-internet-explorer</a></li><li><a href="0046-registry-reform.html"><strong>8.</strong> 0046-registry-reform</a></li><li><a href="0050-improved-actions.html"><strong>9.</strong> 0050-improved-actions</a></li><li><a href="0053-helpers.html"><strong>10.</strong> 0053-helpers</a></li><li><a href="0056-improved-release-cycle.html"><strong>11.</strong> 0056-improved-release-cycle</a></li><li><a href="0057-ember-data-reference-unification.html"><strong>12.</strong> 0057-ember-data-reference-unification</a></li><li><a href="0058-helper-listing.html"><strong>13.</strong> 0058-helper-listing</a></li><li><a href="0061-ember-data-background-fetch.html"><strong>14.</strong> 0061-ember-data-background-fetch</a></li><li><a href="0064-contextual-component-lookup.html"><strong>15.</strong> 0064-contextual-component-lookup</a></li><li><a href="0065-deprecation-warning-handlers.html"><strong>16.</strong> 0065-deprecation-warning-handlers</a></li><li><a href="0091-weakmap.html"><strong>17.</strong> 0091-weakmap</a></li><li><a href="0095-router-service.html"><strong>18.</strong> 0095-router-service</a></li><li><a href="0101-ember-data-friendly-errors.html"><strong>19.</strong> 0101-ember-data-friendly-errors</a></li><li><a href="0120-route-serializers.html"><strong>20.</strong> 0120-route-serializers</a></li><li><a href="0136-contains-to-includes.html"><strong>21.</strong> 0136-contains-to-includes</a></li><li><a href="0139-isHtmlSafe.html"><strong>22.</strong> 0139-isHtmlSafe</a></li><li><a href="0143-module-unification.html"><strong>23.</strong> 0143-module-unification</a></li><li><a href="0150-factory-for.html"><strong>24.</strong> 0150-factory-for</a></li><li><a href="0176-javascript-module-api.html"><strong>25.</strong> 0176-javascript-module-api</a></li><li><a href="0178-deprecate-ember-k.html"><strong>26.</strong> 0178-deprecate-ember-k</a></li><li><a href="0181-deprecate-ember-data-initializers.html"><strong>27.</strong> 0181-deprecate-ember-data-initializers</a></li><li><a href="0186-track-unique-history-location-state.html"><strong>28.</strong> 0186-track-unique-history-location-state</a></li><li><a href="0191-deprecate-component-lifecycle-hook-args.html"><strong>29.</strong> 0191-deprecate-component-lifecycle-hook-args</a></li><li><a href="0194-deprecate-custom-event-manager.html"><strong>30.</strong> 0194-deprecate-custom-event-manager</a></li><li><a href="0213-custom-components.html"><strong>31.</strong> 0213-custom-components</a></li><li><a href="0225-ember-engines-mount-params.html"><strong>32.</strong> 0225-ember-engines-mount-params</a></li><li><a href="0226-named-blocks.html"><strong>33.</strong> 0226-named-blocks</a></li><li><a href="0229-deprecate-testing-restricted-resolver.html"><strong>34.</strong> 0229-deprecate-testing-restricted-resolver</a></li><li><a href="0232-simplify-qunit-testing-api.html"><strong>35.</strong> 0232-simplify-qunit-testing-api</a></li><li><a href="0236-deprecation-ember-string.html"><strong>36.</strong> 0236-deprecation-ember-string</a></li><li><a href="0237-deprecation-ember-map.html"><strong>37.</strong> 0237-deprecation-ember-map</a></li><li><a href="0240-es-classes.html"><strong>38.</strong> 0240-es-classes</a></li><li><a href="0252-browser-support-changes.html"><strong>39.</strong> 0252-browser-support-changes</a></li><li><a href="0268-acceptance-testing-refactor.html"><strong>40.</strong> 0268-acceptance-testing-refactor</a></li><li><a href="0276-named-args.html"><strong>41.</strong> 0276-named-args</a></li><li><a href="0278-template-only-components.html"><strong>42.</strong> 0278-template-only-components</a></li><li><a href="0280-remove-application-wrapper.html"><strong>43.</strong> 0280-remove-application-wrapper</a></li><li><a href="0281-es5-getters.html"><strong>44.</strong> 0281-es5-getters</a></li><li><a href="0286-block-let-template-helper.html"><strong>45.</strong> 0286-block-let-template-helper</a></li><li><a href="0287-promote-in-element-to-public-api.html"><strong>46.</strong> 0287-promote-in-element-to-public-api</a></li><li><a href="0293-record-data.html"><strong>47.</strong> 0293-record-data</a></li><li><a href="0294-optional-jquery.html"><strong>48.</strong> 0294-optional-jquery</a></li><li><a href="0297-deprecate-ember-logger.html"><strong>49.</strong> 0297-deprecate-ember-logger</a></li><li><a href="0308-deprecate-property-lookup-fallback.html" class="active"><strong>50.</strong> 0308-deprecate-property-lookup-fallback</a></li><li><a href="0311-angle-bracket-invocation.html"><strong>51.</strong> 0311-angle-bracket-invocation</a></li><li><a href="0318-array-helper.html"><strong>52.</strong> 0318-array-helper</a></li><li><a href="0322-deprecate-copy-copyable.html"><strong>53.</strong> 0322-deprecate-copy-copyable</a></li><li><a href="0324-deprecate-component-isvisible.html"><strong>54.</strong> 0324-deprecate-component-isvisible</a></li><li><a href="0326-ember-data-filter-deprecation.html"><strong>55.</strong> 0326-ember-data-filter-deprecation</a></li><li><a href="0329-deprecated-ember-evented-in-ember-data.html"><strong>56.</strong> 0329-deprecated-ember-evented-in-ember-data</a></li><li><a href="0331-deprecate-globals-resolver.html"><strong>57.</strong> 0331-deprecate-globals-resolver</a></li><li><a href="0335-deprecate-send-action.html"><strong>58.</strong> 0335-deprecate-send-action</a></li><li><a href="0337-native-class-constructor-update.html"><strong>59.</strong> 0337-native-class-constructor-update</a></li><li><a href="0340-deprecate-ember-merge.html"><strong>60.</strong> 0340-deprecate-ember-merge</a></li><li><a href="0345-discord.html"><strong>61.</strong> 0345-discord</a></li><li><a href="0370-deprecate-computed-volatile.html"><strong>62.</strong> 0370-deprecate-computed-volatile</a></li></ul>
+        </div>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page" tabindex="-1">
+                <div id="menu-bar" class="menu-bar">
+                    <div class="left-buttons">
+                        <i id="sidebar-toggle" class="fa fa-bars"></i>
+                        <i id="theme-toggle" class="fa fa-paint-brush"></i>
+                    </div>
+
+                    <h1 class="menu-title"></h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html">
+                            <i id="print-button" class="fa fa-print" title="Print this book"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="content" class="content">
+                    <ul>
+<li>Start Date: 2-15-2018</li>
+<li>RFC PR:</li>
+<li>Ember Issue:</li>
+</ul>
+<a class="header" href="0308-deprecate-property-lookup-fallback.html#summary" id="summary"><h1>Summary</h1></a>
+<p>Beginning the transition to deprecate the fallback behavior of resolving <code>{{foo}}</code> by requiring the usage of <code>{{this.foo}}</code> as syntax to refer to properties of the templates' backing component. This would be the default behavior in Glimmer Components.</p>
+<p>For example, given the following component class:</p>
+<pre><code class="language-js">import Component from '@ember/component';
+export default Component.extends({
+  init() {
+    super(...arguments);
+    this.set('greeting', 'Hello');
+  }
+});
+</code></pre>
+<p>One would refer to the <code>greeting</code> property as such:</p>
+<pre><code class="language-hbs">&lt;h1&gt;{{this.greeting}}, Chad&lt;/h1&gt;
+</code></pre>
+<p>Ember will render &quot;Hello, Chad&quot;.</p>
+<p>To make this deprecation tractable, we will provide a codemod for migrating templates.</p>
+<a class="header" href="0308-deprecate-property-lookup-fallback.html#motivation" id="motivation"><h1>Motivation</h1></a>
+<p>Currently, the way to access properties on a components class is <code>{{greeting}}</code> from a template. This works because the component class is one of the objects we resolve against during the evaluation of the expression.</p>
+<p>The first problem with this approach is that the <code>{{greeting}}</code> syntax is ambiguous, as it could be referring to a local variable (block param), a helper with no arguments, a closed over component, or a property on the component class.</p>
+<a class="header" href="0308-deprecate-property-lookup-fallback.html#exemplar" id="exemplar"><h2>Exemplar</h2></a>
+<p>Consider the following example where the ambiguity can cause issues:</p>
+<p>You have a component class that looks like the following component and template:</p>
+<pre><code class="language-js">import Component from '@ember/component';
+import computed from '@ember/computed';
+
+export default Component.extend({
+  formatName: computed('firstName', 'lastName', function() {
+    return `${this.firstName} ${this.lastName}`;
+  });
+});
+</code></pre>
+<pre><code class="language-hbs">&lt;h1&gt;Hello {{formatName}}!&lt;/h1&gt;
+</code></pre>
+<p>Given <code>{ firstName: 'Chad', lastName: 'Hietala' }</code>, Ember will render the following:</p>
+<pre><code class="language-html">&lt;h1&gt;Hello Chad Hietala!&lt;/h1&gt;
+</code></pre>
+<p>Now some time goes on and someone adds a <code>formatName</code> helper at <code>app/helpers/fortmatName.js</code> that looks like the following:</p>
+<pre><code class="language-js">export default function formatName([firstName, lastName]) {
+  return `${firstName} ${lastName}`;
+}
+</code></pre>
+<p>Due to the fact that helpers take precedence over property lookups, our <code>{{formatName}}</code> now resolves to a helper. When the helper runs it doesn't have any arguments so our template now renders the following:</p>
+<pre><code class="language-html">&lt;h1&gt;Hello !&lt;/h1&gt;
+</code></pre>
+<p>This can be a refactoring hazard and can often lead to confusion for readers of the template. Upon encountering <code>{{greeting}}</code> in a component's template, the reader has to check all of these places: first, you need to scan the surrounding lines for block params with that name; next, you check in the helpers folder to see if there is a helper with that name (it could also be coming from an addon!); finally, you check the component's JavaScript class to look for a (computed) property.</p>
+<p>Like <a href="https://github.com/emberjs/rfcs/blob/68812bf2d439c6bb77ad491e0159b371b68c5c35/text/0276-named-args.md">RFC#0276</a> made argument usage explicit through the <code>@</code> prefix, the <code>this</code> prefix will resolve the ambiguity and greatly improve clarity, especially in big projects with a lot of files (and uses a lot of addons).</p>
+<p>As an aside, the ambiguity that causes confusion for human readers is also a problem for the compiler. While it is not the main goal of this proposal, resolving this ambiguity also helps the rendering system. Currently, the &quot;runtime&quot; template compiler has to perform a helper lookup for every <code>{{greeting}}</code> in each template. It will be able to skip this resolution process and perform other optimizations (such as reusing the internal <a href="https://github.com/glimmerjs/glimmer-vm/blob/master/guides/04-references.md">reference</a>
+object and caches) with this addition.</p>
+<p>Furthermore, by enforcing the <code>this</code> prefix, tooling like the <a href="https://github.com/emberwatch/ember-language-server">Ember Language Server</a> does not need to know about fallback resolution rules. This makes common features like <a href="https://code.visualstudio.com/docs/editor/editingevolved#_go-to-definition">&quot;Go To Definition&quot;</a> much easier to implement since we have semantics that mean &quot;property on class&quot;.</p>
+<a class="header" href="0308-deprecate-property-lookup-fallback.html#transition-path" id="transition-path"><h1>Transition Path</h1></a>
+<p>We intend this to be a <em>very slow</em> process as we understand it is a large change. Because of this we will be doing a phased rollout to help guide people in transtion. Below is an outline of how we plan to roll this change out.</p>
+<p><strong>Phase 1:</strong></p>
+<ul>
+<li>Add <a href="https://github.com/ember-template-lint/ember-template-lint/pull/392">template lint rule</a> to <a href="https://github.com/ember-template-lint/ember-template-lint">ember-template-lint</a> as an <strong>opt-in</strong> rule</li>
+<li>Document the <a href="https://github.com/dyfactor/dyfactor">codemod infrastructure</a> and <a href="https://github.com/dyfactor/dyfactor-plugin-disambiguate-locals">codemod</a>. Make it available for early adopters</li>
+<li>Start updating docs to use <code>this.</code></li>
+</ul>
+<p><strong>Phase 2:</strong></p>
+<ul>
+<li>Add the lint rule by default <em>in the apps</em> <code>.template-lintrc.js</code></li>
+<li>Complete doc migration to use <code>this.</code></li>
+</ul>
+<p><strong>Phase 3:</strong></p>
+<ul>
+<li>Enable the lint rule by default in the <code>recommended</code> config</li>
+</ul>
+<p><strong>Phase 4:</strong></p>
+<ul>
+<li>Introduce deprecation <strong>app only</strong> fallbacks</li>
+</ul>
+<p><strong>Phase 5:</strong></p>
+<ul>
+<li>Introduce deprecation for <strong>any</strong> fallbacks</li>
+</ul>
+<p><strong>Phase 6:</strong></p>
+<ul>
+<li>Rev major to 4.0.0</li>
+<li>Add assert for fallback behavior</li>
+</ul>
+<p><strong>Phase 7:</strong></p>
+<ul>
+<li>Remove fallback functionality in 4.5, post 4.4.0 LTS</li>
+</ul>
+<a class="header" href="0308-deprecate-property-lookup-fallback.html#how-we-teach-this" id="how-we-teach-this"><h1>How We Teach This</h1></a>
+<p><code>{{this.foo}}</code> is the way to access the properties on the component class. This also aligns with property access in JavaScript.</p>
+<p>Since the <code>{{this.foo}}</code> syntax has worked in Ember.Component (which is the only kind of component available today) since the 1.0 series, we are not really in a rush to migrate the community (and the guides, etc) to using the new syntax. In the meantime, this could be viewed as a tool to improve clarity in templates.</p>
+<p>While we think writing <code>{{this.foo}}</code> would be a best practice for new code going forward, the community can migrate at its own pace one component at a time. However, once the fallback functionality is eventually removed this will result in a &quot;Helper not found&quot; error.</p>
+<a class="header" href="0308-deprecate-property-lookup-fallback.html#syntax-breakdown" id="syntax-breakdown"><h2>Syntax Breakdown</h2></a>
+<p>The follow is a breakdown of the different forms and what they mean:</p>
+<ul>
+<li><code>{{@foo}}</code> is an argument passed to the component</li>
+<li><code>{{this.foo}}</code> is a property on the component class</li>
+<li><code>{{#with this.foo as |foo|}} {{foo}} {{/with}}</code> the <code>{{foo}}</code> is a local</li>
+<li><code>{{foo}}</code> is a helper</li>
+</ul>
+<a class="header" href="0308-deprecate-property-lookup-fallback.html#drawbacks" id="drawbacks"><h1>Drawbacks</h1></a>
+<p>The largest downside of this proposal is that it makes templates more verbose, causing developers to type a bit more. This will also create a decent amount of deprecation noise, although we feel like tools like <a href="https://github.com/mixonic/ember-cli-deprecation-workflow">ember-cli-deprecation-workflow</a> can help mitigate this.</p>
+<a class="header" href="0308-deprecate-property-lookup-fallback.html#alternatives" id="alternatives"><h1>Alternatives</h1></a>
+<p>This pattern of having programming model constructs to distinguish between the backing class and arguments passed to the component is not unique to Ember.</p>
+<a class="header" href="0308-deprecate-property-lookup-fallback.html#what-other-frameworks-do" id="what-other-frameworks-do"><h2>What Other Frameworks Do</h2></a>
+<p>React has used <code>this.props</code> to talk about values passed to you and <code>this.state</code> to mean data owned by the backing component class since it was released. However, this approach of creating a specific object on the component class to mean &quot;properties available to the template&quot;, would likely be even more an invasive change and goes against the mental model that the context for the template is the class.</p>
+<p>Vue requires enumeration of <code>props</code> passed to a component, but the values in the template suffer from the ambiguity that we are trying to solve.</p>
+<p>Angular relies heavily on the dependency injection e.g. <code>@Input</code> to enumerate the bindings that were passed to the component and relies heavily on TypeScript to hide or expose values to templating layer with <code>public</code> and <code>private</code> fields. Like Vue, Angular does not disambiguate.</p>
+<a class="header" href="0308-deprecate-property-lookup-fallback.html#introduce-yet-another-sigil" id="introduce-yet-another-sigil"><h2>Introduce Yet Another Sigil</h2></a>
+<p>We could introduce another sigil to remove ambiguity. This would address the concern about verbosity, however it is now another thing we would have to teach.</p>
+<a class="header" href="0308-deprecate-property-lookup-fallback.html#change-resolution-order" id="change-resolution-order"><h2>Change Resolution Order</h2></a>
+<p>The other option is to reverse the resolution order to prefer properties over helpers. However this has the reverse problem as described in the exemplar.</p>
+<a class="header" href="0308-deprecate-property-lookup-fallback.html#do-nothing" id="do-nothing"><h2>Do Nothing</h2></a>
+<p>I personally don't think this is an option, since the goal is to provide clarity for applications as they evolve over time and to provide a more concise mental model.</p>
+<a class="header" href="0308-deprecate-property-lookup-fallback.html#unresolved-questions" id="unresolved-questions"><h1>Unresolved questions</h1></a>
+<p>TBD</p>
+
+                </div>
+
+                <!-- Mobile navigation buttons -->
+                
+                    <a rel="prev" href="0297-deprecate-ember-logger.html" class="mobile-nav-chapters previous">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="0311-angle-bracket-invocation.html" class="mobile-nav-chapters next">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+
+            </div>
+
+            
+                <a href="0297-deprecate-ember-logger.html" class="nav-chapters previous" title="You can navigate through the chapters using the arrow keys">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+            
+
+            
+                <a href="0311-angle-bracket-invocation.html" class="nav-chapters next" title="You can navigate through the chapters using the arrow keys">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            
+
+        </div>
+
+
+        <!-- Local fallback for Font Awesome -->
+        <script>
+            if ($(".fa").css("font-family") !== "FontAwesome") {
+                $('<link rel="stylesheet" type="text/css" href="_FontAwesome/css/font-awesome.css">').prependTo('head');
+            }
+        </script>
+
+        <!-- Livereload script (if served using the cli tool) -->
+        
+
+        
+
+        
+
+        
+
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+    </body>
+</html>

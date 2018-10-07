@@ -1,0 +1,311 @@
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>0345-discord - </title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <base href="">
+
+        <link rel="stylesheet" href="book.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <link rel="shortcut icon" href="favicon.png">
+
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme -->
+        
+
+        
+
+        <!-- Fetch Clipboard.js from CDN but have a local fallback -->
+        <script src="https://cdn.jsdelivr.net/clipboard.js/1.6.1/clipboard.min.js"></script>
+        <script>
+            if (typeof Clipboard == 'undefined') {
+                document.write(unescape("%3Cscript src='clipboard.min.js'%3E%3C/script%3E"));
+            }
+        </script>
+
+        <!-- Fetch JQuery from CDN but have a local fallback -->
+        <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+        <script>
+            if (typeof jQuery == 'undefined') {
+                document.write(unescape("%3Cscript src='jquery.js'%3E%3C/script%3E"));
+            }
+        </script>
+
+        <!-- Fetch store.js from local - TODO add CDN when 2.x.x is available on cdnjs -->
+        <script src="store.js"></script>
+
+        <!-- Custom JS script -->
+        
+
+    </head>
+    <body class="light">
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme = store.get('mdbook-theme');
+            if (theme === null || theme === undefined) { theme = 'light'; }
+            $('body').removeClass().addClass(theme);
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var sidebar = store.get('mdbook-sidebar');
+            if (sidebar === "hidden") { $("html").addClass("sidebar-hidden") }
+            else if (sidebar === "visible") { $("html").addClass("sidebar-visible") }
+        </script>
+
+        <div id="sidebar" class="sidebar">
+            <ul class="chapter"><li class="affix"><a href="introduction.html">Introduction</a></li><li><a href="0001-transform-attribute-meta-parameter.html"><strong>1.</strong> 0001-transform-attribute-meta-parameter</a></li><li><a href="0003-block-params.html"><strong>2.</strong> 0003-block-params</a></li><li><a href="0010-engines.html"><strong>3.</strong> 0010-engines</a></li><li><a href="0011-improved-cp-syntax.html"><strong>4.</strong> 0011-improved-cp-syntax</a></li><li><a href="0015-the-road-to-ember-2-0.html"><strong>5.</strong> 0015-the-road-to-ember-2-0</a></li><li><a href="0024-bound-attributes.html"><strong>6.</strong> 0024-bound-attributes</a></li><li><a href="0045-internet-explorer.html"><strong>7.</strong> 0045-internet-explorer</a></li><li><a href="0046-registry-reform.html"><strong>8.</strong> 0046-registry-reform</a></li><li><a href="0050-improved-actions.html"><strong>9.</strong> 0050-improved-actions</a></li><li><a href="0053-helpers.html"><strong>10.</strong> 0053-helpers</a></li><li><a href="0056-improved-release-cycle.html"><strong>11.</strong> 0056-improved-release-cycle</a></li><li><a href="0057-ember-data-reference-unification.html"><strong>12.</strong> 0057-ember-data-reference-unification</a></li><li><a href="0058-helper-listing.html"><strong>13.</strong> 0058-helper-listing</a></li><li><a href="0061-ember-data-background-fetch.html"><strong>14.</strong> 0061-ember-data-background-fetch</a></li><li><a href="0064-contextual-component-lookup.html"><strong>15.</strong> 0064-contextual-component-lookup</a></li><li><a href="0065-deprecation-warning-handlers.html"><strong>16.</strong> 0065-deprecation-warning-handlers</a></li><li><a href="0091-weakmap.html"><strong>17.</strong> 0091-weakmap</a></li><li><a href="0095-router-service.html"><strong>18.</strong> 0095-router-service</a></li><li><a href="0101-ember-data-friendly-errors.html"><strong>19.</strong> 0101-ember-data-friendly-errors</a></li><li><a href="0120-route-serializers.html"><strong>20.</strong> 0120-route-serializers</a></li><li><a href="0136-contains-to-includes.html"><strong>21.</strong> 0136-contains-to-includes</a></li><li><a href="0139-isHtmlSafe.html"><strong>22.</strong> 0139-isHtmlSafe</a></li><li><a href="0143-module-unification.html"><strong>23.</strong> 0143-module-unification</a></li><li><a href="0150-factory-for.html"><strong>24.</strong> 0150-factory-for</a></li><li><a href="0176-javascript-module-api.html"><strong>25.</strong> 0176-javascript-module-api</a></li><li><a href="0178-deprecate-ember-k.html"><strong>26.</strong> 0178-deprecate-ember-k</a></li><li><a href="0181-deprecate-ember-data-initializers.html"><strong>27.</strong> 0181-deprecate-ember-data-initializers</a></li><li><a href="0186-track-unique-history-location-state.html"><strong>28.</strong> 0186-track-unique-history-location-state</a></li><li><a href="0191-deprecate-component-lifecycle-hook-args.html"><strong>29.</strong> 0191-deprecate-component-lifecycle-hook-args</a></li><li><a href="0194-deprecate-custom-event-manager.html"><strong>30.</strong> 0194-deprecate-custom-event-manager</a></li><li><a href="0213-custom-components.html"><strong>31.</strong> 0213-custom-components</a></li><li><a href="0225-ember-engines-mount-params.html"><strong>32.</strong> 0225-ember-engines-mount-params</a></li><li><a href="0226-named-blocks.html"><strong>33.</strong> 0226-named-blocks</a></li><li><a href="0229-deprecate-testing-restricted-resolver.html"><strong>34.</strong> 0229-deprecate-testing-restricted-resolver</a></li><li><a href="0232-simplify-qunit-testing-api.html"><strong>35.</strong> 0232-simplify-qunit-testing-api</a></li><li><a href="0236-deprecation-ember-string.html"><strong>36.</strong> 0236-deprecation-ember-string</a></li><li><a href="0237-deprecation-ember-map.html"><strong>37.</strong> 0237-deprecation-ember-map</a></li><li><a href="0240-es-classes.html"><strong>38.</strong> 0240-es-classes</a></li><li><a href="0252-browser-support-changes.html"><strong>39.</strong> 0252-browser-support-changes</a></li><li><a href="0268-acceptance-testing-refactor.html"><strong>40.</strong> 0268-acceptance-testing-refactor</a></li><li><a href="0276-named-args.html"><strong>41.</strong> 0276-named-args</a></li><li><a href="0278-template-only-components.html"><strong>42.</strong> 0278-template-only-components</a></li><li><a href="0280-remove-application-wrapper.html"><strong>43.</strong> 0280-remove-application-wrapper</a></li><li><a href="0281-es5-getters.html"><strong>44.</strong> 0281-es5-getters</a></li><li><a href="0286-block-let-template-helper.html"><strong>45.</strong> 0286-block-let-template-helper</a></li><li><a href="0287-promote-in-element-to-public-api.html"><strong>46.</strong> 0287-promote-in-element-to-public-api</a></li><li><a href="0293-record-data.html"><strong>47.</strong> 0293-record-data</a></li><li><a href="0294-optional-jquery.html"><strong>48.</strong> 0294-optional-jquery</a></li><li><a href="0297-deprecate-ember-logger.html"><strong>49.</strong> 0297-deprecate-ember-logger</a></li><li><a href="0308-deprecate-property-lookup-fallback.html"><strong>50.</strong> 0308-deprecate-property-lookup-fallback</a></li><li><a href="0311-angle-bracket-invocation.html"><strong>51.</strong> 0311-angle-bracket-invocation</a></li><li><a href="0318-array-helper.html"><strong>52.</strong> 0318-array-helper</a></li><li><a href="0322-deprecate-copy-copyable.html"><strong>53.</strong> 0322-deprecate-copy-copyable</a></li><li><a href="0324-deprecate-component-isvisible.html"><strong>54.</strong> 0324-deprecate-component-isvisible</a></li><li><a href="0326-ember-data-filter-deprecation.html"><strong>55.</strong> 0326-ember-data-filter-deprecation</a></li><li><a href="0329-deprecated-ember-evented-in-ember-data.html"><strong>56.</strong> 0329-deprecated-ember-evented-in-ember-data</a></li><li><a href="0331-deprecate-globals-resolver.html"><strong>57.</strong> 0331-deprecate-globals-resolver</a></li><li><a href="0335-deprecate-send-action.html"><strong>58.</strong> 0335-deprecate-send-action</a></li><li><a href="0337-native-class-constructor-update.html"><strong>59.</strong> 0337-native-class-constructor-update</a></li><li><a href="0340-deprecate-ember-merge.html"><strong>60.</strong> 0340-deprecate-ember-merge</a></li><li><a href="0345-discord.html" class="active"><strong>61.</strong> 0345-discord</a></li><li><a href="0370-deprecate-computed-volatile.html"><strong>62.</strong> 0370-deprecate-computed-volatile</a></li></ul>
+        </div>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page" tabindex="-1">
+                <div id="menu-bar" class="menu-bar">
+                    <div class="left-buttons">
+                        <i id="sidebar-toggle" class="fa fa-bars"></i>
+                        <i id="theme-toggle" class="fa fa-paint-brush"></i>
+                    </div>
+
+                    <h1 class="menu-title"></h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html">
+                            <i id="print-button" class="fa fa-print" title="Print this book"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="content" class="content">
+                    <ul>
+<li>Start Date: 07/11/2018</li>
+<li>RFC PR: https://github.com/emberjs/rfcs/pull/345</li>
+<li>Ember Issue: (leave this empty)</li>
+</ul>
+<a class="header" href="0345-discord.html#rfc-to-move-the-ember-community-chat-to-discord" id="rfc-to-move-the-ember-community-chat-to-discord"><h1>RFC to move the Ember community chat to Discord</h1></a>
+<a class="header" href="0345-discord.html#summary" id="summary"><h2>Summary</h2></a>
+<p>Encourage the Ember community to adopt Discord for real-time chat (vs Slack or other options).</p>
+<a class="header" href="0345-discord.html#motivation" id="motivation"><h2>Motivation</h2></a>
+<p>Real-time chat is essential to the function of online communities, particularly in open source. Chat fosters an informal, interactive style of communication that is important for building relationships, sharing community norms, coordinating on projects, and brainstorming ideas.</p>
+<p>The Ember community predominantly uses <a href="https://ember-community-slackin.herokuapp.com/">a Slack instance</a> as the gathering place of choice. While we have benefited enormously from Slack, there are significant downsides as well.</p>
+<a class="header" href="0345-discord.html#loss-of-history" id="loss-of-history"><h3>Loss of History</h3></a>
+<p>Because we use Slack's free plan, the entire instance is limited to 10,000 messages in history at any time. Because of this hard cap, the amount of time messages persist continues to shrink as the community grows.</p>
+<p>It's hard to quantify exactly how painful this limitation is, as it means that new community members can't search for the answer to a question that was likely answered in the past. We can never go back to reference how or when a decision was made, which can mean decision-making feels less transparent that it should be.</p>
+<p>This limit applies not just to chat messages, but direct messages between community members as well. This leads to annoyance, as people have to ask for the same information over again if they forgot to save it, or data loss, as useful things like code snippets vanish into the ether.</p>
+<a class="header" href="0345-discord.html#performance" id="performance"><h3>Performance</h3></a>
+<p>The architecture of the Slack native application relies on running a separate web application per Slack instance the user is signed into. For users who need to be in multiple Slack instances, this can add up to a significant tax on computer resources, particularly as the application starts up.</p>
+<p>Once Slack is up and running, most people generally find the performance reasonable, but a solution that offers better startup and runtime performance would be ideal.</p>
+<a class="header" href="0345-discord.html#privacy-concerns" id="privacy-concerns"><h3>Privacy Concerns</h3></a>
+<p>Slack is very clear that their target audience is companies, who often have strict compliance rules that they must follow. Unfortunately, those needs are often at odds with concerns about privacy in an open source community.</p>
+<p>In particular, Slack recently added a feature called Corporate Export that theoretically allows administrators to export all messages, including private messages, without notifying users.</p>
+<p>Now, the odds of this feature being abused are extremely low. It is only available on Slack's Plus plan, which means a malicious actor would need to be granted administrator priveleges, pony up at least $150,000 to upgrade our Slack plan for that month, apply for the the Corporate Export feature, have it granted by Slack, and then perform an export without anyone noticing.</p>
+<p>Because the difficulty of exploiting this feature for evil is so remote, it's not a primary concern driving this change. But all things being equal, we prefer a solution that doesn't offer export of private messages at all, so it's never a concern at the back of someone's mind.</p>
+<a class="header" href="0345-discord.html#better-communication--transparency" id="better-communication--transparency"><h3>Better Communication &amp; Transparency</h3></a>
+<p>Out of frustration with Slack's disappearing messages, the Ember.js core team set up a Discord server to evaluate if it might be a better fit for open source communities.</p>
+<p>While this was a public Discord server that anyone could sign up for, its existence was not widely publicized because we were unsure if Discord was the right solution.</p>
+<p>Over time, the core team and many contributors gravitated towards the Discord, finding that it served our needs better. Because of how valuable the Slack instance is, no one wanted to propose a move to Discord until a plan (like, say, this RFC) could be put in place.</p>
+<p>Unfortunately, this state of affairs has had several undesirable outcomes.</p>
+<p>First, it has caused many of the most prolific contributors to be less active in Slack. This may give the appearance of stagnation or disinterest, when momentum on Ember has never been higher. It robs lurkers of the ability to become contributors if a good opportunity to help pops up. And it prevents some of the most experienced members of the community from being around to help answer questions they might have an off-hand answer to.</p>
+<p>Second, and perhaps worst of all, it undermines the transparency and open governance that we have worked hard to create. Our bar is higher than just making it possible to contribute—we go out of our way to actively welcome and encourage everyone to participate, learn and contribute.</p>
+<p>Finally, this is not intended to replace <a href="https://discuss.emberjs.com/">the forum</a>, and that should be made clear. The forum is still the preferred place for asyncronous, threaded conversations where in-depth discussion is desired.</p>
+<a class="header" href="0345-discord.html#detailed-design" id="detailed-design"><h2>Detailed design</h2></a>
+<a class="header" href="0345-discord.html#transition-plan" id="transition-plan"><h3>Transition Plan</h3></a>
+<p>We will need these things to transition the community smoothly:</p>
+<ul>
+<li>a period of time when we use both chat platforms during the transition, put the equivalent Discord channel information in the Slack channel topic</li>
+<li>a clear guide (with illustrations)</li>
+<li>once all of the setup is complete, the Discord server invites can be distributed.</li>
+</ul>
+<p>Note: the current Discord chat will be closed while this RFC is under consideration. If the RFC is accepted, then a detailed implementation plan (mostly role/channel/server setup) &amp; invitation strategy will be carried out.</p>
+<a class="header" href="0345-discord.html#initial-setup" id="initial-setup"><h4>Initial Setup</h4></a>
+<p>Because Discord has fine-grained controls, we will be able to implement categories for chats.</p>
+<p>We intend to have the &quot;welcome&quot; channel as the initial channel for everyone who joins the Discord server. This channel will be read-only and will list the rules for the Discord server.</p>
+<p>We also intend to have a &quot;setup&quot; channel. This channel will give you a complete guide of how to take advantage of the personalization, privacy and security, and notification controls in Discord.</p>
+<p><strong>Verification Level</strong>
+Initially, we will be implementing the &quot;low&quot; verification level, which means users will need to have a verified email on their Discord account. If this proves to be too easy of a target for spammers, we will implement a higher level of verification (levels include amount of time a user has to be a verified member of the server before they can post).</p>
+<p><strong>Explicit Content Filter</strong>
+Since this is a public Discord server, we will be setting an explicit content filter- it will scan messages from all members without a role. Email-verified members will be given a community member role to start, and other roles may be added to users over time.</p>
+<p><strong>Categories and Channels</strong>
+Community members will then have the option of visiting the &quot;setup&quot; channel and learning more about fine-grained controls, such as:</p>
+<ul>
+<li>notifications</li>
+<li>muting a channel</li>
+<li>muting a category</li>
+</ul>
+<p>Because our goal is transparency, all of the channels that exist will be visible in the channel list. A lock icon will display if the user does not have the role necessary to join that channel. (<em>FWIW, the alternative is to not display locked channels at all, which we felt would be less ideal- it is better to know that there are channels where private conversations are necessary and see what they are.</em>)</p>
+<p>The following proposed initial category and channel list was chosen based on the current channel needs and evaluation of the channels with the most members on Slack. <em>Additional channels may be requested in the Admin/community-feedback channel.</em></p>
+<p><strong>Category/Channel List:</strong></p>
+<ul>
+<li>(No Category)
+<ul>
+<li>welcome (community guidelines are posted here) &lt;--readonly &amp; the server invite puts users in this channel first.</li>
+<li>setup-profile (how to setup your profile) &lt;--readonly</li>
+</ul>
+</li>
+<li>Admin
+<ul>
+<li>community-feedback (questions, comments, concerns, requests)</li>
+<li>security</li>
+<li>steering-committee 🔒 (locked to role “steering-committee”)</li>
+<li>news &amp; announcements</li>
+<li>ember-jobs</li>
+<li>bots</li>
+</ul>
+</li>
+<li>Core Teams
+<ul>
+<li>ember-js 🔒 (locked to role “core-js”)</li>
+<li>ember-data 🔒 (locked to role “core-data”)</li>
+<li>ember-cli 🔒 (locked to role “core-cli”)</li>
+<li>ember-learning 🔒 (locked to role “core-learning”)</li>
+</ul>
+</li>
+<li>Working on Ember
+<ul>
+<li>ember-cli</li>
+<li>ember-data</li>
+<li>ember-engines</li>
+<li>ember-js</li>
+<li>glimmer-vm</li>
+<li>triage</li>
+<li>st-* (as needed)</li>
+</ul>
+</li>
+<li>Using Ember
+<ul>
+<li>general-help</li>
+<li>learning-ember</li>
+<li>a11y</li>
+<li>backend</li>
+<li>internationalization</li>
+<li>jsonapi</li>
+<li>mobile</li>
+<li>ember-js</li>
+<li>ember-data</li>
+<li>ember-cli</li>
+<li>ember-engines</li>
+<li>fastboot</li>
+<li>ember-twiddle</li>
+<li>e-*</li>
+</ul>
+</li>
+<li>Supporting Ember
+<ul>
+<li>documentation</li>
+<li>website</li>
+<li>marketing-and-advocacy</li>
+<li>infrastructure</li>
+</ul>
+</li>
+<li>Event-Chat
+<ul>
+<li>EmberConf</li>
+<li>EmberCamps</li>
+<li>EmberFest</li>
+<li>Talks</li>
+<li>Other Conferences</li>
+<li>Meetup organizers</li>
+</ul>
+</li>
+<li>Social
+<ul>
+<li>Water-cooler (random)</li>
+<li>Local-*</li>
+<li>Media (livestreams, videos, podcasts)</li>
+<li>Pets</li>
+<li>Women in Ember 🔒</li>
+</ul>
+</li>
+</ul>
+<p><strong>Integrations</strong>
+Discord's integration game is strong. Discord has a <a href="https://discordapp.com/developers/docs/intro">very detailed API</a> and many integrations already exist, and with no limitation (compared to free Slack instances, that have limited numbers of integrations).</p>
+<a class="header" href="0345-discord.html#how-do-we-teach-this" id="how-do-we-teach-this"><h2>How do we teach this?</h2></a>
+<p>In addition to having a setup channel available upon login (with illustrated instructions), here are some links where community members can read more:</p>
+<ul>
+<li><a href="https://discordapp.com/open-source">Discord Loves Open Source</a></li>
+<li><a href="https://discordapp.com/guidelines">Discord Community Guidelines</a></li>
+<li><a href="http://www.businessinsider.com/how-to-use-discord-the-messaging-app-for-gamers-2018-5">How to use Discord</a></li>
+</ul>
+<a class="header" href="0345-discord.html#drawbacks" id="drawbacks"><h2>Drawbacks</h2></a>
+<a class="header" href="0345-discord.html#supporting-learning-vs-supporting-development" id="supporting-learning-vs-supporting-development"><h3>Supporting Learning vs Supporting Development</h3></a>
+<p>There is some concern that there is already some confusion on Slack about where to get help learning/using Ember, and where to coordinate working on Ember. We need to have a clear delineation so that the folks who are spending their volunteer time to ship Ember features can continue to concentrate and do that.</p>
+<a class="header" href="0345-discord.html#losing-community-members" id="losing-community-members"><h3>Losing Community Members</h3></a>
+<p>There is some concern that we may lose some community members due to this move. This could happen for a variety of reasons- the nature of OSS work means that some are not always active on the chat community, or the user doesn't want a different chat app, etc. We believe that the former is probably more likely than the latter, since many of us are on at least 2-3 chat apps already.</p>
+<a class="header" href="0345-discord.html#alternatives" id="alternatives"><h2>Alternatives</h2></a>
+<p>The alternative to this would be to temporarily remain on Slack until we are able to evaluate and choose another viable option. However, we believe that staying on Slack is not desirable.</p>
+<p>List of Slack alternatives:</p>
+<ul>
+<li>riot.io</li>
+<li>mattermost.org</li>
+<li>rocket.chat</li>
+<li>spectrum.chat</li>
+</ul>
+<a class="header" href="0345-discord.html#unresolved-questions--faq" id="unresolved-questions--faq"><h2>Unresolved questions &amp; FAQ</h2></a>
+<ul>
+<li>When will there be conversation threads? We have been told that it is in the works, but there is no ETA.</li>
+<li>Disqus, Discord, Discuss? Which is which? For clarity, we will encourage the use of the terms <strong>chat</strong> (Discord), <strong>the forums</strong> (Discuss), and <strong>blog comments</strong> (Disqus)- mostly so no one has to try to remember.</li>
+</ul>
+
+                </div>
+
+                <!-- Mobile navigation buttons -->
+                
+                    <a rel="prev" href="0340-deprecate-ember-merge.html" class="mobile-nav-chapters previous">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="0370-deprecate-computed-volatile.html" class="mobile-nav-chapters next">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+
+            </div>
+
+            
+                <a href="0340-deprecate-ember-merge.html" class="nav-chapters previous" title="You can navigate through the chapters using the arrow keys">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+            
+
+            
+                <a href="0370-deprecate-computed-volatile.html" class="nav-chapters next" title="You can navigate through the chapters using the arrow keys">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            
+
+        </div>
+
+
+        <!-- Local fallback for Font Awesome -->
+        <script>
+            if ($(".fa").css("font-family") !== "FontAwesome") {
+                $('<link rel="stylesheet" type="text/css" href="_FontAwesome/css/font-awesome.css">').prependTo('head');
+            }
+        </script>
+
+        <!-- Livereload script (if served using the cli tool) -->
+        
+
+        
+
+        
+
+        
+
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+    </body>
+</html>

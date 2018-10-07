@@ -1,0 +1,353 @@
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>0337-native-class-constructor-update - </title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <base href="">
+
+        <link rel="stylesheet" href="book.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <link rel="shortcut icon" href="favicon.png">
+
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme -->
+        
+
+        
+
+        <!-- Fetch Clipboard.js from CDN but have a local fallback -->
+        <script src="https://cdn.jsdelivr.net/clipboard.js/1.6.1/clipboard.min.js"></script>
+        <script>
+            if (typeof Clipboard == 'undefined') {
+                document.write(unescape("%3Cscript src='clipboard.min.js'%3E%3C/script%3E"));
+            }
+        </script>
+
+        <!-- Fetch JQuery from CDN but have a local fallback -->
+        <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+        <script>
+            if (typeof jQuery == 'undefined') {
+                document.write(unescape("%3Cscript src='jquery.js'%3E%3C/script%3E"));
+            }
+        </script>
+
+        <!-- Fetch store.js from local - TODO add CDN when 2.x.x is available on cdnjs -->
+        <script src="store.js"></script>
+
+        <!-- Custom JS script -->
+        
+
+    </head>
+    <body class="light">
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme = store.get('mdbook-theme');
+            if (theme === null || theme === undefined) { theme = 'light'; }
+            $('body').removeClass().addClass(theme);
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var sidebar = store.get('mdbook-sidebar');
+            if (sidebar === "hidden") { $("html").addClass("sidebar-hidden") }
+            else if (sidebar === "visible") { $("html").addClass("sidebar-visible") }
+        </script>
+
+        <div id="sidebar" class="sidebar">
+            <ul class="chapter"><li class="affix"><a href="introduction.html">Introduction</a></li><li><a href="0001-transform-attribute-meta-parameter.html"><strong>1.</strong> 0001-transform-attribute-meta-parameter</a></li><li><a href="0003-block-params.html"><strong>2.</strong> 0003-block-params</a></li><li><a href="0010-engines.html"><strong>3.</strong> 0010-engines</a></li><li><a href="0011-improved-cp-syntax.html"><strong>4.</strong> 0011-improved-cp-syntax</a></li><li><a href="0015-the-road-to-ember-2-0.html"><strong>5.</strong> 0015-the-road-to-ember-2-0</a></li><li><a href="0024-bound-attributes.html"><strong>6.</strong> 0024-bound-attributes</a></li><li><a href="0045-internet-explorer.html"><strong>7.</strong> 0045-internet-explorer</a></li><li><a href="0046-registry-reform.html"><strong>8.</strong> 0046-registry-reform</a></li><li><a href="0050-improved-actions.html"><strong>9.</strong> 0050-improved-actions</a></li><li><a href="0053-helpers.html"><strong>10.</strong> 0053-helpers</a></li><li><a href="0056-improved-release-cycle.html"><strong>11.</strong> 0056-improved-release-cycle</a></li><li><a href="0057-ember-data-reference-unification.html"><strong>12.</strong> 0057-ember-data-reference-unification</a></li><li><a href="0058-helper-listing.html"><strong>13.</strong> 0058-helper-listing</a></li><li><a href="0061-ember-data-background-fetch.html"><strong>14.</strong> 0061-ember-data-background-fetch</a></li><li><a href="0064-contextual-component-lookup.html"><strong>15.</strong> 0064-contextual-component-lookup</a></li><li><a href="0065-deprecation-warning-handlers.html"><strong>16.</strong> 0065-deprecation-warning-handlers</a></li><li><a href="0091-weakmap.html"><strong>17.</strong> 0091-weakmap</a></li><li><a href="0095-router-service.html"><strong>18.</strong> 0095-router-service</a></li><li><a href="0101-ember-data-friendly-errors.html"><strong>19.</strong> 0101-ember-data-friendly-errors</a></li><li><a href="0120-route-serializers.html"><strong>20.</strong> 0120-route-serializers</a></li><li><a href="0136-contains-to-includes.html"><strong>21.</strong> 0136-contains-to-includes</a></li><li><a href="0139-isHtmlSafe.html"><strong>22.</strong> 0139-isHtmlSafe</a></li><li><a href="0143-module-unification.html"><strong>23.</strong> 0143-module-unification</a></li><li><a href="0150-factory-for.html"><strong>24.</strong> 0150-factory-for</a></li><li><a href="0176-javascript-module-api.html"><strong>25.</strong> 0176-javascript-module-api</a></li><li><a href="0178-deprecate-ember-k.html"><strong>26.</strong> 0178-deprecate-ember-k</a></li><li><a href="0181-deprecate-ember-data-initializers.html"><strong>27.</strong> 0181-deprecate-ember-data-initializers</a></li><li><a href="0186-track-unique-history-location-state.html"><strong>28.</strong> 0186-track-unique-history-location-state</a></li><li><a href="0191-deprecate-component-lifecycle-hook-args.html"><strong>29.</strong> 0191-deprecate-component-lifecycle-hook-args</a></li><li><a href="0194-deprecate-custom-event-manager.html"><strong>30.</strong> 0194-deprecate-custom-event-manager</a></li><li><a href="0213-custom-components.html"><strong>31.</strong> 0213-custom-components</a></li><li><a href="0225-ember-engines-mount-params.html"><strong>32.</strong> 0225-ember-engines-mount-params</a></li><li><a href="0226-named-blocks.html"><strong>33.</strong> 0226-named-blocks</a></li><li><a href="0229-deprecate-testing-restricted-resolver.html"><strong>34.</strong> 0229-deprecate-testing-restricted-resolver</a></li><li><a href="0232-simplify-qunit-testing-api.html"><strong>35.</strong> 0232-simplify-qunit-testing-api</a></li><li><a href="0236-deprecation-ember-string.html"><strong>36.</strong> 0236-deprecation-ember-string</a></li><li><a href="0237-deprecation-ember-map.html"><strong>37.</strong> 0237-deprecation-ember-map</a></li><li><a href="0240-es-classes.html"><strong>38.</strong> 0240-es-classes</a></li><li><a href="0252-browser-support-changes.html"><strong>39.</strong> 0252-browser-support-changes</a></li><li><a href="0268-acceptance-testing-refactor.html"><strong>40.</strong> 0268-acceptance-testing-refactor</a></li><li><a href="0276-named-args.html"><strong>41.</strong> 0276-named-args</a></li><li><a href="0278-template-only-components.html"><strong>42.</strong> 0278-template-only-components</a></li><li><a href="0280-remove-application-wrapper.html"><strong>43.</strong> 0280-remove-application-wrapper</a></li><li><a href="0281-es5-getters.html"><strong>44.</strong> 0281-es5-getters</a></li><li><a href="0286-block-let-template-helper.html"><strong>45.</strong> 0286-block-let-template-helper</a></li><li><a href="0287-promote-in-element-to-public-api.html"><strong>46.</strong> 0287-promote-in-element-to-public-api</a></li><li><a href="0293-record-data.html"><strong>47.</strong> 0293-record-data</a></li><li><a href="0294-optional-jquery.html"><strong>48.</strong> 0294-optional-jquery</a></li><li><a href="0297-deprecate-ember-logger.html"><strong>49.</strong> 0297-deprecate-ember-logger</a></li><li><a href="0308-deprecate-property-lookup-fallback.html"><strong>50.</strong> 0308-deprecate-property-lookup-fallback</a></li><li><a href="0311-angle-bracket-invocation.html"><strong>51.</strong> 0311-angle-bracket-invocation</a></li><li><a href="0318-array-helper.html"><strong>52.</strong> 0318-array-helper</a></li><li><a href="0322-deprecate-copy-copyable.html"><strong>53.</strong> 0322-deprecate-copy-copyable</a></li><li><a href="0324-deprecate-component-isvisible.html"><strong>54.</strong> 0324-deprecate-component-isvisible</a></li><li><a href="0326-ember-data-filter-deprecation.html"><strong>55.</strong> 0326-ember-data-filter-deprecation</a></li><li><a href="0329-deprecated-ember-evented-in-ember-data.html"><strong>56.</strong> 0329-deprecated-ember-evented-in-ember-data</a></li><li><a href="0331-deprecate-globals-resolver.html"><strong>57.</strong> 0331-deprecate-globals-resolver</a></li><li><a href="0335-deprecate-send-action.html"><strong>58.</strong> 0335-deprecate-send-action</a></li><li><a href="0337-native-class-constructor-update.html" class="active"><strong>59.</strong> 0337-native-class-constructor-update</a></li><li><a href="0340-deprecate-ember-merge.html"><strong>60.</strong> 0340-deprecate-ember-merge</a></li><li><a href="0345-discord.html"><strong>61.</strong> 0345-discord</a></li><li><a href="0370-deprecate-computed-volatile.html"><strong>62.</strong> 0370-deprecate-computed-volatile</a></li></ul>
+        </div>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page" tabindex="-1">
+                <div id="menu-bar" class="menu-bar">
+                    <div class="left-buttons">
+                        <i id="sidebar-toggle" class="fa fa-bars"></i>
+                        <i id="theme-toggle" class="fa fa-paint-brush"></i>
+                    </div>
+
+                    <h1 class="menu-title"></h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html">
+                            <i id="print-button" class="fa fa-print" title="Print this book"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="content" class="content">
+                    <ul>
+<li>Start Date: 2018-06-14</li>
+<li>RFC PR: (leave this empty)</li>
+<li>Ember Issue: (leave this empty)</li>
+</ul>
+<a class="header" href="0337-native-class-constructor-update.html#native-class-constructor-update" id="native-class-constructor-update"><h1>Native Class Constructor Update</h1></a>
+<a class="header" href="0337-native-class-constructor-update.html#summary" id="summary"><h2>Summary</h2></a>
+<p>Update the behavior of EmberObject's constructor to defer object
+initialization.</p>
+<a class="header" href="0337-native-class-constructor-update.html#motivation" id="motivation"><h2>Motivation</h2></a>
+<p>Using native class syntax with EmberObject has almost reached full feature
+parity, meaning soon we'll be able to ship native classes and begin recommending
+them. This will do wonders for the Ember learning story, and will bring us in
+line with the wider Javascript community.</p>
+<p>However, early adopters of native classes have experienced some serious
+ergonomic issues due to the current behavior of the class constructor. The issue
+is caused by the fact that properties passed to <code>EmberObject.create</code> are
+assigned to the instance in the root class <code>constructor</code>. Due to the way that
+native class fields work, this means that they are assigned <em>before</em> any
+subclasses' fields are assigned, causing subclass fields to overwrite any value
+passed to <code>create</code>:</p>
+<pre><code class="language-js">class Foo extends EmberObject {
+  bar = 'baz';
+}
+
+let foo = Foo.create({ bar: 'something different' });
+
+console.log(foo.bar); // 'baz'
+</code></pre>
+<p>This has made adoption very difficult, and is a consistent stumbling block for
+new users of native class syntax in Ember. Worse yet, it makes writing a codemod
+for converting to native class syntax very difficult because we don't have a
+clear target.</p>
+<p>For instance, given the above class, how would we convert the class field? Let's
+go through the various options:</p>
+<pre><code class="language-js">class Foo extends EmberObject {
+  // Does not work, for the reasons described above
+  bar = 'baz';
+
+  // Does not cover all cases. If we did `Foo.create({ bar: false })` it would
+  // still assign the default.
+  bar = this.bar || 'baz';
+
+  // This works, but is very verbose and not ideal
+  bar = this.hasOwnProperty('bar') ? this.bar : 'baz';
+
+  // This is one of the community accepted solutions, but it requires lodash
+  bar = _.defaultTo(this.bar, 'baz');
+
+  // This is another community accepted solution, but it requires
+  // @ember-decorators/argument, which is a separate library
+  @argument foo = 'bar';
+}
+</code></pre>
+<p>None of these is ideal. Instead, we can change the behavior of the constructor
+and the <code>create</code> method to circumvent this issue.</p>
+<p>This change <em>would</em> be a breaking change to the behavior of native classes
+today, and a change from the previous class RFC. This will impact early adopters
+and should be made with that in mind. It would <em>not</em> be a change that breaks the
+behavior of the community solutions to class fields mentioned above, and all
+other changes would be relatively easy to create a safe codemod for (essentially
+converting <code>constructor</code> -&gt; <code>init</code> in affected classes), so the impact <em>should</em>
+be minimal.</p>
+<p>Because native classes never officially shipped as part of Ember's public API
+(an announcement was not made, docs have not been written, etc), this RFC
+proposes that the change would <em>not</em> be considered a breaking change <em>for the
+purposes of semver</em>. This would allow us to ship the change during the Ember v3
+release cycle, and prevent more code from being built on top of the previous
+behavior.</p>
+<a class="header" href="0337-native-class-constructor-update.html#detailed-design" id="detailed-design"><h2>Detailed design</h2></a>
+<p>One very important design constraint to making this change is that we <em>cannot</em>
+break the behavior of EmberObject when used <em>without</em> native classes. To do
+this, we will leverage the fact that the static <code>create</code> method is the only
+public way to create an instance of EmberObject.</p>
+<p>Currently, the behavior of EmberObject is the following (simplified):</p>
+<pre><code class="language-js">class EmberObject {
+  constructor(props) {
+    // ..class setup things
+
+    Object.assign(this, props);
+    this.init();
+  }
+
+  static create(props) {
+    let instance = new this(props);
+
+    return instance;
+  }
+}
+</code></pre>
+<p>We can change it to the following (simplified):</p>
+<pre><code class="language-js">class EmberObject {
+  constructor(props) {
+    // ..class setup things
+  }
+
+  static create(props) {
+    let instance = new this(props);
+
+    Object.assign(instance, props);
+    instance.init();
+
+    return instance;
+  }
+}
+</code></pre>
+<p>This would assign the properties <em>after</em> all of the class fields for any
+subclasses have been assigned. Revisiting our previous example, the following
+two class declarations would effectively be equivalent:</p>
+<pre><code class="language-js">const Foo = EmberObject.extend({
+  bar: 'baz'
+});
+
+class Foo extends EmberObject {
+  bar = 'baz';
+}
+</code></pre>
+<p>Much easier to codemod! There are other subtle differences between native class
+fields and EmberObject properties, such as the fact that class fields are
+assigned each time a class is initialized, but these are easier to work around.</p>
+<a class="header" href="0337-native-class-constructor-update.html#injections-and-the-init-hook" id="injections-and-the-init-hook"><h3>Injections and the <code>init</code> hook</h3></a>
+<p>One side effect of this change is that injections will not be available on the
+class instance during the <code>constructor</code> phase. This behavior is not very
+commonly used - based on an informal community survey we found only a few usages
+- but it <em>does</em> exist and have its use cases.</p>
+<p>Figuring out the ideal behavior of injections during the constructor phase is
+outside of the scope of this RFC, and is something that should be discussed in
+future RFCs. For the time being, users can still rely on the <code>init</code> hook, which
+will continue to be called after all injections and properties have been
+assigned to the instance.</p>
+<a class="header" href="0337-native-class-constructor-update.html#new-emberobject" id="new-emberobject"><h3><code>new EmberObject()</code></h3></a>
+<p>It was previously possible to use <code>new</code> syntax with EmberObject. While this
+was not considered public API, it has technically worked and been under test
+since the early days of Ember, and may fall under the category of intimate API.
+Ideally, we would deprecate this usage as a private/intimate API, which would
+mean supporting it through the next LTS version, and dropping support after
+(currently, this would mean dropping it at <code>v3.5.0</code>).</p>
+<p>We can continue to support this behavior in a backwards compatible way while
+deprecating it with one final tweak to the change above:</p>
+<pre><code class="language-js">const DEFER_INIT = new Symbol();
+
+function initialize(instance, props) {
+  Object.assign(instance, props);
+  instance.init();
+}
+
+class EmberObject {
+  constructor(props, maybeDefer) {
+    // ..class setup things
+
+    if (maybeDefer === DEFER_INIT) {
+       return this;
+    }
+
+    deprecate('using `new` with EmberObject has been deprecated. Please use `create` instead.', false, {
+      id: 'object.new-constructor',
+      until: '3.5.0'
+    });
+
+    initialize(this, props);
+  }
+
+  static create(props) {
+    let instance = new this(props, DEFER_INIT);
+    initialize(instance, props);
+
+    return instance;
+  }
+}
+</code></pre>
+<a class="header" href="0337-native-class-constructor-update.html#how-we-teach-this" id="how-we-teach-this"><h2>How we teach this</h2></a>
+<p>If this PR is accepted, most of the major issues with classes will have been
+resolved. We can begin working on a codemod to make converting easier, and move
+toward officially making native classes a finalized part of the public API of
+Ember. Pending decorators and class fields moving to a late enough stage in the
+TC39 process, we can also begin converting the guides to use native class
+syntax.</p>
+<p>We can document the exact behavior of the new constructor in the API docs for
+EmberObject. Most details won't have to change since this change only affects
+native class syntax, which has not been documented much officially. We can also
+demonstrate the behaviors of classes throughout the guides and API docs.</p>
+<p>One thing we should make clear is that EmberObject will likely be deprecated
+in the near future, and that ideally for non-Ember classes (things that aren't
+Components, Services, etc.) users should drop EmberObject altogether and use
+native classes only.</p>
+<a class="header" href="0337-native-class-constructor-update.html#drawbacks" id="drawbacks"><h2>Drawbacks</h2></a>
+<p>This would be a breaking change that could negatively affect early adopters.</p>
+<a class="header" href="0337-native-class-constructor-update.html#alternatives" id="alternatives"><h2>Alternatives</h2></a>
+<ul>
+<li>
+<p>We could leave the behavior as is, and choose a method for defaulting to
+standardize on.</p>
+</li>
+<li>
+<p>We could make this change behind a feature flag and require users to opt-in
+to the new behavior, like optional features that currently exist. This would
+have to be a build time feature flag, since the area is very performance
+sensitive. Given native classes are not yet public API, if we were to do this we
+should probably still default to enabling the new behavior and recommending it
+as the preferred path.</p>
+</li>
+<li>
+<p>We could not deprecate <code>new EmberObject</code> altogether, and instead only
+deprecate passing properties to the constructor. While this would work as a
+temporary solution, it may also encourage users to continue using EmberObject
+instead of switching to native classes, which is ultimately the long term goal.</p>
+</li>
+</ul>
+<a class="header" href="0337-native-class-constructor-update.html#unresolved-questions" id="unresolved-questions"><h2>Unresolved questions</h2></a>
+<p>How do we handle DI during the construction phase?</p>
+
+                </div>
+
+                <!-- Mobile navigation buttons -->
+                
+                    <a rel="prev" href="0335-deprecate-send-action.html" class="mobile-nav-chapters previous">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="0340-deprecate-ember-merge.html" class="mobile-nav-chapters next">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+
+            </div>
+
+            
+                <a href="0335-deprecate-send-action.html" class="nav-chapters previous" title="You can navigate through the chapters using the arrow keys">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+            
+
+            
+                <a href="0340-deprecate-ember-merge.html" class="nav-chapters next" title="You can navigate through the chapters using the arrow keys">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            
+
+        </div>
+
+
+        <!-- Local fallback for Font Awesome -->
+        <script>
+            if ($(".fa").css("font-family") !== "FontAwesome") {
+                $('<link rel="stylesheet" type="text/css" href="_FontAwesome/css/font-awesome.css">').prependTo('head');
+            }
+        </script>
+
+        <!-- Livereload script (if served using the cli tool) -->
+        
+
+        
+
+        
+
+        
+
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+    </body>
+</html>
