@@ -16,11 +16,11 @@ In addition, it would make it possible to customize behavior that is currently b
 
 ## Detailed design
 
-This RFC proposes to add two new (public) methods to the REST Adapter: `findResource` and `findRelationship`.
+This RFC proposes to add two new (public) methods to DS.Adapter: `findResource` and `findRelationship`.
 
 ### findResource
 
-This new method will be responsible for deciding if to use `coalesceFindRequests`. Depending on this, it will either call the existing `findRecord` or `findMany` methods on the adapter. It will also handle the normalization, and call a new, private method `_pushRecordIntoStore` that will actually handle the conversion to Ember Data records.
+This new method will be responsible for deciding if to use `coalesceFindRequests`. Depending on this, it will either call the existing `findRecord` or `findMany` methods on the adapter. It will also handle the normalization to JSON:API format.
 
 Below you can find a simplified implementation of the new `findResource` method. Note that this is not about exact implementation, but it should show the flow of data through the system.
 
@@ -34,8 +34,7 @@ export default RESTAdapter.extend({
     
     let payload = await this.findRecord(store, type, id, snapshot);
     let serializer = store.serializerFor(type.modelName);
-    let normalizedPayload = serializer.normalizeFindRecordResponse(type, payload);
-    return this._pushRecordIntoStore(store, type, normalizedPayload, snapshot);
+    return serializer.normalizeFindRecordResponse(type, payload);
   },
   
   _scheduleFindResource(store, type, id, snapshot) {
@@ -54,7 +53,7 @@ export default RESTAdapter.extend({
       
        let serializer = store.serializerFor(type.modelName);
        let normalizedPayload = serializer.normalizeFindRecordResponse(type, payload);
-       resolveFind(this._pushRecordIntoStore(store, type, normalizedPayload, snapshot));
+       resolveFind(normalizedPayload);
        return;
     }
     
@@ -70,15 +69,15 @@ export default RESTAdapter.extend({
     let normalizedResponse = serializer.normalizeFindManyResponse(type, payload);
 
     pendingFinds.forEach(({ id, resolveFind, snapshot }) => {
-      let recordPayload = normalizedResponse.data.findBy('id', id);
-      resolveFind(this._pushRecordIntoStore(store, type, recordPayload, snapshot));
+      let normalizedRecordPayload = normalizedResponse.data.findBy('id', id);
+      resolveFind(normalizedRecordPayload);
     });
   }
 
 });
 ```
 
-`adapter.findResource()` would be called from the store, and would replace the current (private) finder functions.
+`adapter.findResource()` would be called from the store to get the actual payloads to use.
 
 ### findRelationship
 
@@ -100,11 +99,7 @@ export default RESTAdapter.extend({
       let normalizeMethodName = relationshipType === 'belongsTo' 
         ? 'normalizeFindBelongsTo' 
         : 'normalizeFindHasMany';
-      let normalizedPayload = serializer[normalizeMethodName](...);
-      
-      return normalizedPayload.data.map((recordPayload) => {
-        return this._pushRecordIntoStore(...);
-      });
+      return serializer[normalizeMethodName](...);
     }
     
     // Else just use findResource
